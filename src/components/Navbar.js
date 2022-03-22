@@ -19,10 +19,21 @@ const Nav = () => {
           <button type='button' className='nav-toggle'>
             <FaBars/>
           </button>
-
-          
         </div>
-      </div>
+
+          <ul className='nav-links'>
+            {links.map((link) => {
+              const { id, text, url } = link
+              return (
+                <li key={id}>
+                  <Link to={url}>{text}</Link>
+                </li>
+              )
+            })}
+          </ul>
+          <CartButtons/>
+        </div>
+    
     </NavContainer>
   )
 }
