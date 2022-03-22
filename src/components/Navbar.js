@@ -16,6 +16,9 @@ const Nav = () => {
           <Link to='/'>
             <img src={logo} alt="comfy baby" />
           </Link>
+          <button type='button' className='nav-toggle'>
+            <FaBars/>
+          </button>
 
           
         </div>
