@@ -70,6 +70,7 @@ const Wrapper = styled.div`
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--clr-grey-1);
+    font-family: "Delius Swash Caps", cursive;
     letter-spacing: var(--spacing);
     svg {
       margin-left: 5px;
