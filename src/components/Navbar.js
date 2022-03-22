@@ -13,8 +13,11 @@ const Nav = () => {
     <NavContainer>
       <div className="nav-center">
         <div className="nav-header">
-          <Link to='/'/>
-          <img src={logo} alt="comfy baby" />
+          <Link to='/'>
+            <img src={logo} alt="comfy baby" />
+          </Link>
+
+          
         </div>
       </div>
     </NavContainer>
