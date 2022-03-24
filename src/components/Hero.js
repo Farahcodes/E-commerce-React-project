@@ -2,10 +2,25 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import heroBcg from '../assets/hero-bcg.jpg'
-import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import heroBcg2 from '../assets/hero-bcg-2.jpg'
 
 const Hero = () => {
-  return <h4>hero</h4>
+  return (
+    <Wrapper className='section-center'>
+      <article className='content'>
+        <h1>design your <br />
+        dream nursery</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint facilis qui veritatis temporibus labore cumque assumenda sapiente reiciendis maiores fuga?</p>
+        <Link to='/products' className='btn hero-btn'>
+          shop now
+        </Link>
+      </article>
+      <article className='img-container'>
+        <img src={heroBcg} alt="nice nursery" className='main-img' />
+        <img src={heroBcg2} alt="baby playing" className='accent-img' />
+      </article>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
