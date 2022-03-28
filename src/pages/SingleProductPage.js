@@ -28,7 +28,6 @@ const SingleProductPage = () => {
     fetchSingleProduct(`${url}${id}`)
   },[id])
 
-
   useEffect(()=>{
     if(error){
       setTimeout(() => {
@@ -43,7 +42,13 @@ const SingleProductPage = () => {
   if(error){
     return <Error/>
   }
-  return <h4>single product page</h4>
+  const{name,price,description,stock,stars,reviews,id:sku,company,images}=product;
+
+  return (
+    <Wrapper>
+      
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.main`
