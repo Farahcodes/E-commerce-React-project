@@ -34,10 +34,14 @@ const filter_reducer = (state, action) => {
 
     }
     if(sort ==='name-a'){
-      
+      tempProducts = tempProducts.sort((a,b)=> {
+        return a.name.localeCompare(b.name)
+      })
     }
     if(sort ==='name-z'){
-      
+      tempProducts = tempProducts.sort((a,b)=> {
+        return b.name.localeCompare(a.name)
+      })
     }
     return {...state,filtered_products:tempProducts}
   }
