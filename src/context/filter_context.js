@@ -26,7 +26,7 @@ const initialState = {
     max_price:0,
     price:0,
     shipping:false,
-  }
+  },
 }
 
 const FilterContext = React.createContext()
@@ -75,7 +75,7 @@ export const FilterProvider = ({ children }) => {
 
   }
   const clearFilters = ()=>{
-
+    dispatch({type:CLEAR_FILTERS})
   }
   return (
     <FilterContext.Provider value={{...state,setGridView,setListView,updateSort,updateFilters,clearFilters}}>
