@@ -72,9 +72,15 @@ const filter_reducer = (state, action) => {
     }
     //colors
     if(color !== 'all'){
-      tempProducts = tempProducts.filter((product =>{
+      tempProducts = tempProducts.filter((product) =>{
         return product.colors.find((c)=> c === color)
-      }))
+      })
+    }
+    //price
+
+    //shipping
+    if(shipping){
+      tempProducts = tempProducts.filter((product)=> product.shipping === true)
     }
 
     return {...state,filtered_products:tempProducts}
