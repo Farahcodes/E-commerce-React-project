@@ -10,7 +10,7 @@ export const localProducts = [
       'Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge',
     category: 'nursery',
     shipping: true,
-    stock: 0,
+    stock: 12,
     reviews: 60,
     stars: 5,
     images: [
@@ -76,7 +76,7 @@ export const localProducts = [
       'Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge',
     category: 'bath',
     shipping: true,
-    stock: 10,
+    stock: 20,
     reviews: 65,
     stars: 5,
     images: [
