@@ -88,3 +88,9 @@ export const localProducts = [
     featured: false,
   },
 ];
+
+
+export const getSingleProduct = (id) =>{
+    const product = localProducts.find((product)=> product.id === id);
+    return product
+}
