@@ -14,7 +14,7 @@ export const localProducts = [
     reviews: 60,
     stars: 5,
     images: [
-      { url: '/images/product-1.jpg' },
+      { url: '/images/product-7.jpg' },
       { url: '/images/product-4.jpg' },
       { url: '/images/product-5.jpg' },
       { url: '/images/product-6.jpg' },
@@ -77,8 +77,8 @@ export const localProducts = [
     category: 'bath',
     shipping: true,
     stock: 10,
-    reviews: 30,
-    stars: 4,
+    reviews: 65,
+    stars: 5,
     images: [
       { url: '/images/product-16.jpg' },
       { url: '/images/product-17.jpg' },
