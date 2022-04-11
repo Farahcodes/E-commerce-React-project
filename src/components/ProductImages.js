@@ -1,8 +1,21 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react/cjs/react.production.min';
 import styled from 'styled-components'
 
-const ProductImages = ({images=[{url:''}]}) => {
-  const[main,setMain]= useState(images[0])
+const ProductImages = ({images}) => {
+  const[main,setMain]= useState('');
+  useEffect(()=>{
+    if(images){
+      setMain(images[0])
+    }
+  },[images]);
+  if(!images){
+    return (
+      <Wrapper>
+        <h4>Loading...</h4>
+      </Wrapper>
+    );
+  }
   return (
     <Wrapper>
       <img src={main.url} alt="main image" className='main' />

@@ -1,9 +1,9 @@
 export const localProducts = [
   {
     id: '1',
-    name: 'first product',
+    name: 'baby nursery',
     price: 25999,
-    image: '/images/product-3.jpg',
+    image: '/images/product-6.jpg',
     colors: ['#ff0000', '#00ff00', '#0000ff'],
     company: 'marcos',
     description:
@@ -23,9 +23,9 @@ export const localProducts = [
   },
   {
     id: '2',
-    name: 'second product',
+    name: 'baby plays',
     price: 30000,
-    image: '/images/product-8.jpg',
+    image: '/images/product-15.jpg',
     colors: ['#ff0000', '#00ff00', '#0000ff'],
     company: 'ikea',
     description:
@@ -45,7 +45,7 @@ export const localProducts = [
   },
   {
     id: '3',
-    name: 'third product',
+    name: 'sleeping baby',
     price: 15000,
     image: '/images/product-10.jpg',
     colors: ['#ff0000', '#00ff00', '#0000ff'],
@@ -63,11 +63,11 @@ export const localProducts = [
       { url: '/images/product-7.jpg' },
       { url: '/images/product-9.jpg' },
     ],
-    featured: true,
+    featured: false,
   },
   {
     id: '4',
-    name: 'fourth product',
+    name: 'bathing baby',
     price: 45000,
     image: '/images/product-16.jpg',
     colors: ['#ff0000', '#00ff00', '#0000ff'],
@@ -85,7 +85,7 @@ export const localProducts = [
       { url: '/images/product-18.jpg' },
       { url: '/images/product-19.jpg' },
     ],
-    featured: false,
+    featured: true,
   },
 ];
 

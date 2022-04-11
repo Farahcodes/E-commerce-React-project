@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useContext, useEffect, useReducer } from 'react'
 import reducer from '../reducers/products_reducer'
 import { products_url as url } from '../utils/constants'
+
+import { localProducts, getSingleProduct } from '../products'
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
@@ -41,18 +43,18 @@ export const ProductsProvider = ({ children }) => {
     try {
       const response = await axios.get(url)
       const products = response.data
-      dispatch({type:GET_PRODUCTS_SUCCESS,payload:products})
+      dispatch({type:GET_PRODUCTS_SUCCESS,payload: localProducts})
     } catch (error) {
       dispatch({type:GET_PRODUCTS_ERROR})
     }
   }
 
-  const fetchSingleProduct = async(url)=>{
+  const fetchSingleProduct = async(id)=>{
     dispatch({type:GET_SINGLE_PRODUCT_BEGIN});
     try {
-      const response = await axios.get(url);
-      const singleProduct = response.data;
-      dispatch({type:GET_SINGLE_PRODUCT_SUCCESS,payload:singleProduct})
+      // const response = await axios.get(url);
+      // const singleProduct = response.data;
+      dispatch({type:GET_SINGLE_PRODUCT_SUCCESS,payload:getSingleProduct(id)})
     } catch (error) {
       dispatch({type:GET_SINGLE_PRODUCT_ERROR})
     }
