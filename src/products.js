@@ -1,9 +1,30 @@
+import product1 from './assets/product-1.jpg';
+import product2 from './assets/product-2.jpg';
+import product3 from './assets/product-3.jpg';
+import product4 from './assets/product-4.jpg';
+import product5 from './assets/product-5.jpg';
+import product6 from './assets/product-6.jpg';
+import product7 from './assets/product-7.jpg';
+import product8 from './assets/product-8.jpg';
+import product9 from './assets/product-9.jpg';
+import product10 from './assets/product-10.jpg';
+import product11 from './assets/product-11.jpg';
+import product12 from './assets/product-12.jpg';
+import product13 from './assets/product-13.jpg';
+import product14 from './assets/product-14.jpg';
+import product15 from './assets/product-15.jpg';
+import product16 from './assets/product-16.jpg';
+import product17 from './assets/product-17.jpg';
+import product18 from './assets/product-18.jpg';
+import product19 from './assets/product-19.jpg';
+
+
 export const localProducts = [
   {
     id: '1',
     name: 'baby nursery',
     price: 25999,
-    image: '/images/product-6.jpg',
+    image: product6,
     colors: ['#ff0000', '#00ff00', '#0000ff'],
     company: 'marcos',
     description:
@@ -14,10 +35,10 @@ export const localProducts = [
     reviews: 60,
     stars: 5,
     images: [
-      { url: '/images/product-7.jpg' },
-      { url: '/images/product-4.jpg' },
-      { url: '/images/product-5.jpg' },
-      { url: '/images/product-6.jpg' },
+      { url: product4 },
+      { url: product5 },
+      { url: product6},
+      { url: product7},
     ],
     featured: true,
   },
@@ -25,7 +46,7 @@ export const localProducts = [
     id: '2',
     name: 'baby plays',
     price: 30000,
-    image: '/images/product-15.jpg',
+    image: product15,
     colors: ['#ff0000', '#00ff00', '#0000ff'],
     company: 'ikea',
     description:
@@ -36,10 +57,10 @@ export const localProducts = [
     reviews: 55,
     stars: 4,
     images: [
-      { url: '/images/product-2.jpg' },
-      { url: '/images/product-8.jpg' },
-      { url: '/images/product-11.jpg' },
-      { url: '/images/product-15.jpg' },
+      { url: product2 },
+      { url: product8 },
+      { url: product11 },
+      { url: product15 },
     ],
     featured: true,
   },
@@ -47,7 +68,7 @@ export const localProducts = [
     id: '3',
     name: 'sleeping baby',
     price: 15000,
-    image: '/images/product-10.jpg',
+    image: product10,
     colors: ['#ff0000', '#00ff00', '#0000ff'],
     company: 'aubert',
     description:
@@ -58,10 +79,10 @@ export const localProducts = [
     reviews: 30,
     stars: 4,
     images: [
-      { url: '/images/product-10.jpg' },
-      { url: '/images/product-14.jpg' },
-      { url: '/images/product-7.jpg' },
-      { url: '/images/product-9.jpg' },
+      { url: product7 },
+      { url: product9 },
+      { url: product10},
+      { url: product14 },
     ],
     featured: false,
   },
@@ -80,10 +101,10 @@ export const localProducts = [
     reviews: 65,
     stars: 5,
     images: [
-      { url: '/images/product-16.jpg' },
-      { url: '/images/product-17.jpg' },
-      { url: '/images/product-18.jpg' },
-      { url: '/images/product-19.jpg' },
+      { url: product16 },
+      { url: product17},
+      { url: product18 },
+      { url: product19},
     ],
     featured: true,
   },
