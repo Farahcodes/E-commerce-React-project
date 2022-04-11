@@ -28,6 +28,9 @@ const FeaturedProducts = () => {
         )
       })}
     </div>
+    <Link to='/products' className='btn'>
+      all products
+    </Link>
   </Wrapper>
   )
 }
