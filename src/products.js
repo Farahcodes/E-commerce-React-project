@@ -44,7 +44,7 @@ export const localProducts = [
   },
   {
     id: '2',
-    name: 'baby plays',
+    name: 'playing baby',
     price: 30000,
     image: product15,
     colors: ['#ff0000', '#00ff00', '#0000ff'],
