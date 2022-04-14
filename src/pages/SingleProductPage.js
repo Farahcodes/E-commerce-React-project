@@ -24,7 +24,8 @@ const SingleProductPage = () => {
   } = useProductsContext();
 
   useEffect(() => {
-    fetchSingleProduct(`${url}${id}`);
+    // fetchSingleProduct(`${url}${id}`);
+    fetchSingleProduct(id);
     // eslint-disable-next-line
   }, [id]);
   useEffect(() => {
