@@ -1,25 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import { loadStripe } from '@stripe/stripe-js'
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { loadStripe } from '@stripe/stripe-js';
 import {
   CardElement,
   useStripe,
   Elements,
   useElements,
-} from '@stripe/react-stripe-js'
-import axios from 'axios'
-import { useCartContext } from '../context/cart_context'
-import { useUserContext } from '../context/user_context'
-import { formatPrice } from '../utils/helpers'
-import { useHistory } from 'react-router-dom'
+} from '@stripe/react-stripe-js';
+import axios from 'axios';
+import { useCartContext } from '../context/cart_context';
+import { useUserContext } from '../context/user_context';
+import { formatPrice } from '../utils/helpers';
+import { useNavigate } from 'react-router-dom';
 
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const CheckoutForm = () => {
   const { cart, total_amount, shipping_fee, clearCart } = useCartContext();
   const { myUser } = useUserContext();
-  const history = useHistory();
-  //STRIPE STUFF
+  const navigate = useNavigate();
   const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState(null);
   const [processing, setProcessing] = useState('');
@@ -45,34 +44,6 @@ const CheckoutForm = () => {
     // eslint-disable-next-line
   }, []);
 
-  const handleChange = async(event)=>{
-    setDisabled(event.empty);
-    setError(event.error ? event.error.message : '');
-  }
-  const handleSubmit = async(ev)=>{
-    ev.preventDefault();
-    setProcessing(true);
-    const payload = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: elements.getElement(CardElement),
-      },
-    });
-    if (payload.error) {
-      setError(`Payment failed ${payload.error.message}`);
-      setProcessing(false);
-    }
-    else{
-      setError(null);
-      setProcessing(false)
-      setSucceeded(true)
-      setTimeout(() => {
-        clearCart();
-        history.push('/')
-      }, 10000);
-    }
-
-  }
-
   const cardStyle = {
     style: {
       base: {
@@ -90,9 +61,33 @@ const CheckoutForm = () => {
       },
     },
   };
-
-
-
+  const handleChange = async (event) => {
+    // Listen for changes in the CardElement
+    // and display any errors as the customer types their card details
+    setDisabled(event.empty);
+    setError(event.error ? event.error.message : '');
+  };
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
+    setProcessing(true);
+    const payload = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+      },
+    });
+    if (payload.error) {
+      setError(`Payment failed ${payload.error.message}`);
+      setProcessing(false);
+    } else {
+      setError(null);
+      setProcessing(false);
+      setSucceeded(true);
+      setTimeout(() => {
+        clearCart();
+        navigate('/');
+      }, 10000);
+    }
+  };
   return (
     <div>
       {succeeded ? (
@@ -108,16 +103,20 @@ const CheckoutForm = () => {
           <p>Test Card Number: 4242 4242 4242 4242</p>
         </article>
       )}
-      <form id="payment-form" onSubmit={handleSubmit}>
-        <CardElement id='card-element' options={cardStyle} onChange={handleChange}/>
+      <form id='payment-form' onSubmit={handleSubmit}>
+        <CardElement
+          id='card-element'
+          options={cardStyle}
+          onChange={handleChange}
+        />
         <button disabled={processing || disabled || succeeded} id='submit'>
           <span id='button-text'>
             {processing ? <div className='spinner' id='spinner'></div> : 'Pay'}
           </span>
         </button>
-        {/* show any error that happens when processing the payment */}
+        {/* Show any error that happens when processing the payment */}
         {error && (
-          <div className="card-error" role='alert'>
+          <div className='card-error' role='alert'>
             {error}
           </div>
         )}
@@ -132,18 +131,18 @@ const CheckoutForm = () => {
         </p>
       </form>
     </div>
-  )
-}
+  );
+};
 
 const StripeCheckout = () => {
   return (
     <Wrapper>
-      <Elements stripe ={promise}>
+      <Elements stripe={promise}>
         <CheckoutForm />
       </Elements>
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.section`
   form {
@@ -283,6 +282,6 @@ const Wrapper = styled.section`
       width: 80vw;
     }
   }
-`
+`;
 
-export default StripeCheckout
+export default StripeCheckout;
